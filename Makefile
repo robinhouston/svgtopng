@@ -3,9 +3,9 @@ INSTALLDIR = /usr/local/svgtopng
 INSTALLBINSYMLINK = /usr/local/bin
 
 JAVACFLAGS = -Xlint
-CLASSPATH = ${BATIK_JARS}:.
 
 BATIK_JARS = $(shell ./jars.sh $(BATIK_LIBDIR))
+CLASSPATH := $(BATIK_JARS):.
 
 export BATIK_JARS CLASSPATH INSTALLDIR
 
