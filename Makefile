@@ -1,6 +1,6 @@
 BATIK_LIBDIR = /usr/local/batik-1.7/lib
 INSTALLDIR = /usr/local/svgtopng
-
+INSTALLBINSYMLINK = /usr/local/bin
 
 JAVACFLAGS = -Xlint
 CLASSPATH = ${BATIK_JARS}:.
@@ -23,3 +23,4 @@ svgtopng: generate-script.sh Makefile
 install: all
 	mkdir -p $(INSTALLDIR)
 	cp SVGToPNG.class svgtopng $(INSTALLDIR)
+	ln -sf $(INSTALLDIR)/svgtopng $(INSTALLBINSYMLINK)
