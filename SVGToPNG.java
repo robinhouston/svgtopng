@@ -7,6 +7,11 @@ import org.apache.batik.transcoder.TranscoderException;
 import org.apache.batik.transcoder.TranscoderInput;
 import org.apache.batik.transcoder.TranscoderOutput;
 
+/**
+ * This class is designed to be invoked by the svgtopng script.
+ *
+ * It is based on the example code at http://xmlgraphics.apache.org/batik/using/transcoder.html
+ */
 public class SVGToPNG {
   
   public static void main(String[] args)
@@ -18,7 +23,7 @@ public class SVGToPNG {
             System.exit(1);
         }
         String inputFilename = args[1];
-        
+
         // Create a JPEG transcoder
         ImageTranscoder t = new PNGTranscoder();
 
@@ -31,10 +36,5 @@ public class SVGToPNG {
 
         // Save the image.
         t.transcode(input, output);
-
-        // Flush and close the stream.
-        // ostream.flush();
-        // ostream.close();
-        // System.exit(0);
   }
 }
